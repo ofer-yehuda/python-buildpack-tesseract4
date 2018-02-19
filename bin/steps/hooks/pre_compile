@@ -28,6 +28,14 @@ mv $BUILDPACK_PATH/tesseract/liblept.so.5.0.1 $TESSERACT_DIR
 mv $BUILDPACK_PATH/tesseract/libtesseract.a $TESSERACT_DIR
 mv $BUILDPACK_PATH/tesseract/libtesseract.la $TESSERACT_DIR
 mv $BUILDPACK_PATH/tesseract/libtesseract.so.4.0.0 $TESSERACT_DIR
+#new files that were add to handle image file compressions
+mv $BUILDPACK_PATH/tesseract/libgif.so.4 $TESSERACT_DIR
+mv $BUILDPACK_PATH/tesseract/libjpeg.so.8 $TESSERACT_DIR
+mv $BUILDPACK_PATH/tesseract/libjpeg.so.62 $TESSERACT_DIR
+mv $BUILDPACK_PATH/tesseract/libpng.so $TESSERACT_DIR
+mv $BUILDPACK_PATH/tesseract/libtiff.so.4 $TESSERACT_DIR
+mv $BUILDPACK_PATH/tesseract/libtiff.so.5 $TESSERACT_DIR
+mv $BUILDPACK_PATH/tesseract/libwebp.so.5 $TESSERACT_DIR
 
 mkdir -p $TESSERACT_DIR/tessdata
 mv $BUILDPACK_PATH/tesseract/tessdata/* $TESSERACT_DIR/tessdata
@@ -55,6 +63,14 @@ pushd $DEPS_DIR/$DEPS_IDX/lib >/dev/null
     ln -s ../tesseract/liblept.la liblept.la
     ln -s ../tesseract/libtesseract.a libtesseract.a
     ln -s ../tesseract/libtesseract.la libtesseract.la
+
+    ln -s ../tesseract/libgif.so.4 libgif.so.4
+    ln -s ../tesseract/libjpeg.so.8 libjpeg.so.8
+    ln -s ../tesseract/libjpeg.so.62 libjpeg.so.62
+    ln -s ../tesseract/libpng.so libpng.so
+    ln -s ../tesseract/libtiff.so.4 libtiff.so.4
+    ln -s ../tesseract/libtiff.so.5 libtiff.so.5
+    ln -s ../tesseract/libwebp.so.5 libwebp.so.5
 
 popd >/dev/null
 
